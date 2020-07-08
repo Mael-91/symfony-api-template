@@ -1,0 +1,14 @@
+# Please refer to the official documentation of Api Platform https://api-platform.com/docs
+# Below you can see an example of how to use it with the YAML format
+#App\Entity\User:
+#  collectionOperations:
+#    post:
+#      security: is_granted('ROLE_USER')
+#      normalization_context:
+#        groups: ["create:user"]
+#      denormalization_context:
+#        groups: ["read:user"]
+#  itemOperations:
+#    get:
+#      normalization_context:
+#        groups: ["read:user"]

@@ -1,0 +1,7 @@
+# For the official documentation see : https://github.com/markitosgv/JWTRefreshTokenBundle
+gesdinet_jwt_refresh_token:
+  ttl: 2592000 # 1 Month
+  user_identity_field: username
+  ttl_update: true
+  firewall: main
+  single_use: false

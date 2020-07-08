@@ -1,0 +1,23 @@
+lexik_jwt_authentication:
+    secret_key: '%env(resolve:JWT_SECRET_KEY)%'
+    public_key: '%env(resolve:JWT_PUBLIC_KEY)%'
+    pass_phrase: '%env(JWT_PASSPHRASE)%'
+    token_ttl: 3600 # Default value
+    token_extractors:
+        authorization_header:
+            enabled: true
+            prefix: Bearer
+            name: Authorization
+        cookie:
+            enabled: true
+            name: BEARER
+    # If you enable cookie token usage, you will not be able to use a header Authorization
+    set_cookies:
+        BEARER:
+            samesite: lax
+            path: /
+            domain: 127.0.0.1 #
+            #secure: false See if the pull request has been merged to be able to use this feature. https://github.com/lexik/LexikJWTAuthenticationBundle/pull/767
+
+# If you want to have a different configuration for each environment,
+# you will need to create a lexik_jwt_authentication.yaml file in each environment folder

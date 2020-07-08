@@ -1,0 +1,14 @@
+includes:
+  - vendor/phpstan/phpstan-mockery/extension.neon
+  - vendor/phpstan/phpstan-phpunit/extension.neon
+  - vendor/phpstan/phpstan-doctrine/extension.neon
+
+parameters:
+  level: 8
+  paths:
+    - src
+  excludes_analyse:
+    - migrations/*
+    - tests/*
+  checkMissingIterableValueType: false
+  checkGenericClassInNonGenericObjectType: false
